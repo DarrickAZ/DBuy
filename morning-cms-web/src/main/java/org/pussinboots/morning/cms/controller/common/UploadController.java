@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.HtmlUtils;
@@ -100,11 +101,13 @@ public class UploadController extends BaseController{
 	
 	/**
 	 * POST 用户头像上传
+	 *
+	 * @description <input class="avatar-input" id="avatarInput" name="avatar_file" type="file"> @RequestParam("avatar_file")
 	 * @return
 	 */
 	@PostMapping(value = "/avatar", produces = "application/json;charset=utf-8")
 	@ResponseBody
-	public Object uploadAvatar(MultipartFile multipartFile, String avatar_src, String avatar_data) {
+	public Object uploadAvatar(@RequestParam("avatar_file") MultipartFile multipartFile, String avatar_src, String avatar_data) {
 		if (!multipartFile.isEmpty()) {
 			try {
 
