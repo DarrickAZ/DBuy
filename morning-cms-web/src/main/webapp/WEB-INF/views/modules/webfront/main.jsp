@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>后台管理系统 - 猫宁Morning</title>
+<title>后台管理系统 - DBuy商城</title>
 </head>
 <body>
 <div id="wrapper"> 
@@ -117,7 +117,7 @@
       <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="" frameborder="0" data-id="" seamless></iframe>
     </div>
     <div class="footer">
-      <div class="pull-right">© 2016-2017<a href="http://wpa.qq.com/msgrd?v=3&uin=810170512&site=qq&menu=yes" target="_Blank"> 穿鞋子的猫 </a>
+      <div class="pull-right">© 2016-2017<a href="http://wpa.qq.com/msgrd?v=3&uin=810170512&site=qq&menu=yes" target="_Blank"> Darrick </a>
     </div>
   </div>
   <!--右侧部分结束--> 
