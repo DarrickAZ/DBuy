@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>修改头像 - 猫宁Morning</title>
+<title>修改头像 - DBuy商城</title>
 <link rel="stylesheet" href="${ctxsta}/common/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="${ctxsta}/cms/css/animate.css" />
 <link rel="stylesheet" href="${ctxsta}/cms/css/style.css" />
