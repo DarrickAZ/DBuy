@@ -16,7 +16,7 @@
 
 	<properties>
 		<!-- 配置日志文件输出目录 -->
-		<property name="LOG_HOME">/output/logs/system.morning</property>
+		<property name="LOG_HOME">/var/log/system.morning</property>
 		<!-- 日志备份目录 -->
 		<property name="BACKUP_HOME">backup</property>
 		<!-- 日志名称  -->
@@ -24,7 +24,7 @@
 		<!-- 日志切割的最小单位 -->
 		<property name="EVERY_FILE_SIZE">5M</property>
 		<!-- 日志输出级别 -->
-		<property name="OUTPUT_LOG_LEVEL">DEBUG</property>
+		<property name="OUTPUT_LOG_LEVEL">INFO</property>
 	</properties>
 	
 	<appenders>
@@ -39,8 +39,8 @@
 		<!-- 这个会打印出所有的info及以下级别的信息,每次大小超过size,则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩,作为存档-->
 		<!-- 重要的是,如果有多个ThresholdFilter,那么Filters是必须的,同时在Filters中,首先要过滤不符合的日志级别,把不需要的首先DENY掉,然后再ACCEPT需要的日志级别,这个次序不能搞颠倒。 -->
 		<RollingFile name="RollingFile"
-			fileName="${LOG_HOME}/dev_${SERVER_NAME}.log"
-			filePattern="${LOG_HOME}/dev_${BACKUP_HOME}/dev_${SERVER_NAME}.%d{yyyy-MM-dd-HH}.log">
+			fileName="${LOG_HOME}/INFO/${SERVER_NAME}.log"
+			filePattern="${LOG_HOME}/INFO/${BACKUP_HOME}/${SERVER_NAME}.%d{yyyy-MM-dd-HH}.log">
 			<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M] - %msg%n" />
 			<Policies>
                 <SizeBasedTriggeringPolicy size="${EVERY_FILE_SIZE}" />
@@ -54,8 +54,8 @@
 		
 		<!-- 只显示warn级别的信息 -->
 		<RollingFile name="RollingFileWarn"
-			fileName="${LOG_HOME}/dev_${SERVER_NAME}_warn.log"
-			filePattern="${LOG_HOME}/dev_${BACKUP_HOME}/dev_${SERVER_NAME}_warn.%d{yyyy-MM-dd-HH}.log">
+			fileName="${LOG_HOME}/WARN/${SERVER_NAME}_warn.log"
+			filePattern="${LOG_HOME}/WARN/${BACKUP_HOME}/${SERVER_NAME}_warn.%d{yyyy-MM-dd-HH}.log">
 			<PatternLayout pattern="%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n" />
 			<Policies>  
                 <SizeBasedTriggeringPolicy size="${EVERY_FILE_SIZE}" />
@@ -69,8 +69,8 @@
 		
 		<!-- 只显示error级别的信息 -->
 		<RollingFile name="RollingFileError"
-			fileName="${LOG_HOME}/dev_${SERVER_NAME}_error.log"
-			filePattern="${LOG_HOME}/dev_${BACKUP_HOME}/dev_${SERVER_NAME}_error.%d{yyyy-MM-dd-HH}.log">
+			fileName="${LOG_HOME}/ERROR/${SERVER_NAME}_error.log"
+			filePattern="${LOG_HOME}/ERROR/${BACKUP_HOME}/${SERVER_NAME}_error.%d{yyyy-MM-dd-HH}.log">
 			<PatternLayout pattern="%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n" />
 			<Policies>  
                 <SizeBasedTriggeringPolicy size="${EVERY_FILE_SIZE}" />
