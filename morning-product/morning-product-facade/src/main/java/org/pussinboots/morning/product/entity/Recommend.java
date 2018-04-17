@@ -25,6 +25,7 @@ public class Recommend extends Model<Recommend> {
     /**
      * 推荐位ID
      */
+
 	@TableId(value="recommend_id", type= IdType.AUTO)
 	private Long recommendId;
     /**
